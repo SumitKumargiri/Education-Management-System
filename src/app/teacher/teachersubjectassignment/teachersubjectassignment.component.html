@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Teacher Department Subjects</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Department Name</th>
+          <th>Subject Name</th>
+          <th>Upload Assignment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of teacherCourseSubjects">
+          <td>{{ item.firstname }}</td>
+          <td>{{ item.lastname }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.subjectname }}</td>
+          <td>
+            <input type="file" (change)="onFileSelected($event, item)" />
+            <button (click)="onUpload()">Upload</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

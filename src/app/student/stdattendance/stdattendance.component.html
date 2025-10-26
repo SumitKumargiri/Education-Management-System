@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="calendar-container">
+    <div class="row text-center mb-4" id="calendar-view">
+      <div class="col-md-4">
+        <div class="btn-group">
+          <button class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            Previous
+          </button>
+          <button class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">Today</button>
+          <button class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <button class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">Month</button>
+          <button class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">Week</button>
+          <button class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">Day</button>
+        </div>
+      </div>
+    </div>
+
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" [cellTemplate]="cellTemplate">
+      </mwl-calendar-month-view>
+
+      <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [refresh]="refresh"></mwl-calendar-week-view>
+
+      <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" [refresh]="refresh"></mwl-calendar-day-view>
+    </div>
+
+    <ng-template #cellTemplate let-day="day">
+      <div class="cal-day-cell" 
+           [ngClass]="{'outside-current-month': !day.inMonth, 'weekend': isWeekend(day.date), 'present': isPresent(day.date), 'absent': isAbsent(day.date)}" 
+           [attr.data-date]="day.date | date:'yyyy-MM-dd'">
+        <span class="date">{{ day.date | date:'d' }}</span>
+        <div *ngIf="day.events.length > 0" class="events">
+          <span *ngFor="let event of day.events" [ngStyle]="{ color: event.color.primary }">
+            {{ event.title }}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<br><br><br>

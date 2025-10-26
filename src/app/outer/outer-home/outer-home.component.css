@@ -1,0 +1,128 @@
+
+.admin-image {
+    position: relative;
+    margin-top: 100px;
+}
+
+.admin-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+/* ++++++++++++ About section css +++++++++++++ */
+.heading{
+    /* border: 2px solid red; */
+    width: 80%;
+    margin-left: 150px;
+}
+.heading h1{
+    margin-left: 250px;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.head-section{
+    display: flex;
+    width: 100%;
+    /* border: 2px solid red; */
+    margin-top: 50px;
+}
+
+.heading .head1{
+    margin-right: 10px;
+    color: rgb(202, 24, 24);
+}
+.heading .head2{
+    margin-right: 10px;
+    color:rgb(22, 22, 177);
+}
+
+.about-head{
+    /* border: 2px solid blue; */
+    width: 50%;
+    /* margin-top: 100px; */
+    text-align: justify;
+    font-size: 18px;
+}
+
+.image img{
+    width: 450px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: block;
+}
+
+
+/* ++++++++++++++ */
+.image-container {
+    position: relative;
+    width: 100%; 
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+.image-container p {
+    position: absolute;
+    width: 25%;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Author{
+    color: rgb(208, 41, 41);
+    font-size: 28px;
+}
+.slider {
+    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    animation: slide 20s infinite;
+}
+
+.slide {
+    width: 100%;
+    flex: 1 0 100%;
+    height: 550px;
+}
+
+.slides img {
+    width: 50%;
+    display: block;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}

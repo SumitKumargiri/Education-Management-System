@@ -1,0 +1,147 @@
+<br><br>
+<div class="teachersummary">
+
+  <div class="studenttotalattendance" *ngIf="studentAttendanceSummary">
+    <h3>{{ viewDate | date:'fullDate' }}</h3>
+    <p>Student Attendance</p>
+    <p>Total Present: {{ studentAttendanceSummary.totalPresent }}</p>
+  </div>
+
+  <div class="studenttotalattendance" *ngIf="studentAttendanceSummary">
+    <h3>{{ viewDate | date:'fullDate' }}</h3>
+    <p>Student Attendance</p>
+    <p>Total Absent: {{ studentAttendanceSummary.totalAbsent }}</p>
+  </div>
+</div>
+
+<div>
+  <button class="btnaddteacher" (click)="openAddTeacherModal(addTeacherModal)">
+    <i class="bi bi-clipboard-plus-fill"></i>
+  </button>
+</div>
+
+<div class="row text-center" id="calendar-view">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <button class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+        Previous
+      </button>
+      <button class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">Today</button>
+      <button class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+        Next
+      </button>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <button class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">Month</button>
+      <button class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">Week</button>
+      <button class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">Day</button>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event)">
+    <ng-template #cellTemplate let-day="day">
+      <div class="cal-day-cell" [attr.data-date]="day.date | date:'yyyy-MM-dd'">
+        <span>{{ day.date | date:'d' }}</span>
+        <i class="fas fa-pencil-alt" (click)="editAttendance(day.date)"></i>
+      </div>
+    </ng-template>
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [refresh]="refresh"></mwl-calendar-week-view>
+
+  <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" [refresh]="refresh"></mwl-calendar-day-view>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Student Detailed Attendance</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div *ngIf="detailedAttendance">
+      <p><strong>Date:</strong> {{ hoveredDate | date:'fullDate' }}</p>
+      
+          <div *ngIf="studentAttendanceSummary">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Student ID</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Attendance Status</th>
+                  <th scope="col">Department Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of studentAttendanceSummary.attendanceStatuses">
+                  <td>{{ student.studentId }}</td>
+                  <td>{{ student.username }}</td>
+                  <td>{{ student.status }}</td>
+                  <td>{{ student.departmentName }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  <!-- </div> -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<br>
+
+<ng-template #addTeacherModal let-modal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">Teacher Attendance Sheet</h1>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table-container">
+          <input type="date" class="date" [(ngModel)]="date">
+
+          <div class="table-heading">
+            <div class="table-cell-heading">ID</div>
+            <div class="table-cell-heading">First Name</div>
+            <div class="table-cell-heading">Last Name</div>
+            <div class="table-cell-heading">Attendance</div>
+          </div>
+
+          <div class="table-row" *ngFor="let teacher of students">
+            <div class="table-cell">{{ teacher.id }}</div>
+            <div class="table-cell">{{ teacher.firstname }}</div>
+            <div class="table-cell">{{ teacher.lastname }}</div>
+            <div class="table-cell attendance-table-select">
+              <select class="attendance-select" [(ngModel)]="teacher.status">
+                <option value=''>select attendance</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+              </select>
+              <button (click)="submitAttendance(teacher)" class="btn-attendance">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Close click')">Close</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

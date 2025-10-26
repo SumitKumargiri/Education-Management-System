@@ -1,0 +1,72 @@
+.container-fluid{
+    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 140px;
+    border-radius: 4px;
+}
+
+#calendar-view {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .calendar-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .cal-day-cell {
+    position: relative;
+    height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s;
+    cursor: default; 
+  }
+  
+  .cal-day-cell:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .cal-day-cell.outside-current-month {
+    opacity: 0.4;
+  }
+  
+  .cal-day-cell.weekend {
+    color: red;
+  }
+  .cal-day-cell.present {
+    background-color: rgba(144, 238, 144, 0.5); /* Light green background */
+  }
+  
+  .cal-day-cell.absent {
+    background-color: rgba(255, 182, 193, 0.5); /* Light red background */
+  }
+  
+  .date {
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    display: block;
+  }
+  
+  .events {
+    margin-top: 5px;
+  }
+  
+  .btn-group .btn {
+    border-radius: 0;
+  }
+  
+  .btn-group .btn-outline-secondary {
+    border: 1px solid #007bff;
+  }
+  
+  .btn-group .btn-primary.active {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  

@@ -1,0 +1,100 @@
+
+<div class="container-heading">
+    <h1>Student List</h1>
+</div>
+
+<!-- ++++++++++ Add & Search +++++++++++++ -->
+<div class="add_search">
+<div class="Std_add">
+  <button class="btn_add" routerLink="/admin/student/add">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+</div>
+
+
+<div class="search">
+  <div class="input-container">
+    <input type="text" class="form-control" placeholder="Search here....." [(ngModel)]="searchId" (ngModelChange)="onSearchChange($event)">
+    <i class="bi bi-search"></i>
+  </div>
+  <button class="btn_seach" (click)="searchStudent()">Search</button>
+</div>
+
+</div>
+
+
+<!-- ++++++++++++++++++++++++++++ -->
+
+<div class="table-container">
+    <div class="table-heading">
+      <div class="table-cell-heading">ID</div>
+      <div class="table-cell-heading">UseName</div>
+      <div class="table-cell-heading">Email</div>
+      <div class="table-cell-heading">State Name</div>
+      <div class="table-cell-heading">State Code</div>
+      <div class="table-cell-heading">District Name</div>
+      <div class="table-cell-heading">District Code</div>
+      <div class="table-cell-heading">Mobile Number</div>
+      <div class="table-cell-heading">gender</div>
+    </div>
+
+
+
+    <!-- {{students | json}} -->
+    <div class="table-row" *ngFor="let item of students">
+      <div class="table-cell">{{ item.id }}</div>
+      <div class="table-cell">{{capitalizeFirstLetter(item.username) }}</div>
+      <div class="table-cell">{{ item.email }}</div>
+      <div class="table-cell">{{ item.statename }}</div>
+      <div class="table-cell">{{ item.statecode }}</div>
+      <div class="table-cell">{{ item.districtname }}</div>
+      <div class="table-cell">{{ item.districtcode }}</div>
+      <div class="table-cell">{{ item.mobile }}</div>
+      <div class="table-cell">{{ item.gender }}</div>
+
+      <div class="table-cell-button">
+        <button class="btn1" routerLink="/admin/student/update/{{item.id}}">
+          <i class="bi bi-pencil-fill"></i></button>
+        
+
+
+        <button class="btn2" (click)="deleteStudent(item.id)">
+          <i class="bi bi-trash3"></i>
+        </button>
+        
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- +++++++++++++ Loading Overlay ++++++++++++++++ -->
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+  <div>Please wait...</div>
+</div>
+
+
+<!-- +++++++++++ paging concept +++++++++++++++ -->
+
+<div class="pagination">
+  <div class="pagination_button">
+  <button (click)="prevPage()" [disabled]="pageIndex === 1"><i class="bi bi-chevron-left"></i></button>
+  <span>{{ pageIndex }}</span>
+  <button (click)="nextPage()"><i class="bi bi-chevron-right"></i></button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+  

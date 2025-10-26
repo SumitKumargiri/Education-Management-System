@@ -1,0 +1,70 @@
+<form (ngSubmit)="onSubmit()" #updateForm="ngForm">
+  <div class="heading">
+    <h1>Update Student Data</h1>
+  </div>
+
+  <div class="first_level">
+    <div class="first_level1">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" [(ngModel)]="formData.id" required>
+    </div>
+    <div class="first_level1">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="formData.username" required>
+    </div>
+    <div class="first_level1">
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="formData.firstname" required>
+    </div>
+  </div>
+
+  <div class="second_level">
+    <div class="second_level1">
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" name="lastname" [(ngModel)]="formData.lastname" required>
+    </div>
+    <div class="second_level1">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+    </div>
+    <div class="second_level1">
+        <label for="districtname">District Name:</label>
+        <input type="text" id="districtname" name="districtname" [(ngModel)]="formData.districtname" required>
+    </div>
+  </div>
+
+  <div class="second_level">
+    <div class="second_level1">
+        <label for="districtcode">District Code:</label>
+        <input type="number" id="districtcode" name="districtcode" [(ngModel)]="formData.districtcode" required>
+    </div>
+    <div class="second_level1">
+        <label for="statename">State Name:</label>
+        <input type="text" id="statename" name="statename" [(ngModel)]="formData.statename" required>
+    </div>
+    <div class="second_level1">
+        <label for="statecode">State Code:</label>
+        <input type="number" id="statecode" name="statecode" [(ngModel)]="formData.statecode" required>
+    </div>
+  </div>
+
+  <div class="third_level">
+    <div class="third_level1">
+        <label for="mobile">Mobile No:</label>
+        <input type="number" id="mobile" name="mobile" [(ngModel)]="formData.mobile" required>
+    </div>
+    <div class="third_level1">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" [(ngModel)]="formData.gender" required>
+    </div>
+  </div>
+
+  <button type="submit" class="update_btn">Update</button>
+  <button type="button" routerLink="/admin/student/list" class="cancel_btn">Cancel</button>
+  <div *ngIf="successMessageVisible" class="success-message">
+      Data updated successfully
+  </div>
+  <div *ngIf="errorMessageVisible" class="error-message">
+      Error updating data
+  </div>
+</form>

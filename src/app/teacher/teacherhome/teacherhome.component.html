@@ -1,0 +1,51 @@
+
+<div class="headstudent-container">
+    <div class="headstudent">
+        <div class="headingstudent">
+          <h1 class="studentheading">Student</h1>
+          <h2>{{totalStudents}}</h2>
+        </div>
+           <img src="../../../assets/graduation_student_img.png" alt="student_img" class="student_image">
+    </div>
+  
+    <div class="headstudent1">
+      <div class="headingstudent1">
+        <h1>Assignment Allocated</h1>
+        <h2>{{totalAssignment}}</h2>
+      </div>
+        <img src="../../../assets/assignment.png" alt="student_img">
+    </div>
+
+  <div class="headstudent">
+    <div class="headingstudent1">
+      <h1>Pending Assignment</h1>
+      <h2>{{totalpendingAssignment}}</h2>
+    </div>
+      <img src="../../../assets/assignment.png" alt="student_img">
+    </div>
+</div>
+
+
+<div class="chart-container">
+  <div class="chart">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <canvas #historicalChartCanvas></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart" id="departmentchart">      
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <canvas #departmentChartCanvas></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

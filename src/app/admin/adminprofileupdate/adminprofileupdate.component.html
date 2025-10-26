@@ -1,0 +1,24 @@
+<div class="profile-edit-container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input id="username" type="text" formControlName="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email">
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Profile Image:</label>
+        <input id="image" type="file" (change)="onFileSelected($event)">
+        <div *ngIf="fileError" class="error">{{ fileError }}</div>
+      </div>
+  
+      <button type="submit" [disabled]="!profileForm.valid || !selectedFile">Save</button>
+      <button class="btn_cancle" routerLink="/admin/home">Cancle</button>
+    </form>
+  
+  </div>
+  

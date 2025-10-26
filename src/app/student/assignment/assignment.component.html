@@ -1,0 +1,29 @@
+<div *ngIf="assignments.length > 0" class="assignments-container">
+  <h2>Assignments</h2>
+  <table class="assignments-table">
+    <thead>
+      <tr>
+        <th>Teacher Name</th>
+        <th>Subject Name</th>
+        <th>Assignment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assignment of assignments">
+        <td>{{ assignment.firstname }} {{ assignment.lastname }}</td>
+        <td>{{ assignment.subjectname }}</td>
+        <td>
+          <button *ngIf="assignment.assignment" (click)="downloadFile(assignment)" class="assignment-download">
+            <fa-icon [icon]="['fas', 'download']"></fa-icon> Download
+          </button>
+          <button *ngIf="assignment.assignment" (click)="viewFile(assignment)" class="assignment-view">
+            <fa-icon [icon]="['fas', 'eye']"></fa-icon> View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="assignments.length === 0" class="no-assignments">
+  <p>No assignments found.</p>
+</div>

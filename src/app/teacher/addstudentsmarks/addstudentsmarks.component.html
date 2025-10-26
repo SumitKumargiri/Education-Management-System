@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Student Attendancesheet</h2>
+
+  <div class="filter-section">
+    <div class="select-wrapper">
+      <select class="form-control department-filter" (change)="filterStudentsByDepartment($event)">
+        <option value="">All Departments</option>
+        <option *ngFor="let department of getUniqueDepartments()" [value]="department">{{ department }}</option>
+      </select>
+      <span class="arrow-icon"></span> 
+    </div>
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterStudents()" class="form-control search-input" placeholder="Search by firstname" />
+  </div>
+
+  <table class="table table-bordered student-table">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Department Name</th>
+        <th>Subject Name</th>
+        <th>Marks</th>
+        <th>Assignment1 Marks</th>
+        <th>Assignment2 Marks</th>
+        <th>Assignment3 Marks</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of filteredStudentDetails">
+        <td data-label="Full Name">{{ student.firstname }} {{ student.lastname }}</td>
+        <td data-label="Department Name">{{ student.departmentname }}</td>
+        <td data-label="Subject Name">{{ student.subjectname ? student.subjectname : 'N/A' }}</td>
+        <td data-label="Marks">
+          <input type="number" [(ngModel)]="student.marks" class="form-control mark-input" />
+        </td>
+        <td data-label="Assignment1 Marks">
+          <input type="number" [(ngModel)]="student.a1marks" class="form-control mark-input" />
+        </td>
+        <td data-label="Assignment2 Marks">
+          <input type="number" [(ngModel)]="student.a2marks" class="form-control mark-input" />
+        </td>
+        <td data-label="Assignment3 Marks">
+          <input type="number" [(ngModel)]="student.a3marks" class="form-control mark-input" />
+        </td>
+        <td>
+          <button class="btn btn-primary submit-button" (click)="submitMarks(student)">Submit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

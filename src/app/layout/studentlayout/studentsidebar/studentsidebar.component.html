@@ -1,0 +1,65 @@
+
+<nav class="sidebar">
+    <!-- Your logo code -->
+    <div class="logo">
+        <a [routerLink]="'../home'">
+            <img src="../../../../assets/web-logo.png" alt="logo">
+        </a>
+    </div>
+    
+    <div class="navigation">
+      <ul class="list-unstyled">
+        <!-- <li>
+          <a routerLink="/student/">
+            <i class="bi bi-person-circle"></i>Profile</a>
+        </li> -->
+        <li>
+          <a routerLink="studenthome">
+            <i class="bi bi-house-door"></i>Home</a>
+        </li>
+
+        <li>
+          <a routerLink="stdattendance">
+            <i class="bi bi-bookmark"></i>Attendance</a>
+        </li>
+
+
+        <li>
+          <a routerLink="assignment">
+            <i class="bi bi-file-earmark-text"></i>Assigment</a>
+        </li>
+
+        <li>
+          <a routerLink="studentmarks">
+            <i class="bi bi-card-list"></i>Marks</a>
+        </li>
+
+        <li>
+          <a routerLink="stdsubject">
+            <i class="bi bi-book"></i>Subject</a>
+        </li>
+
+        <li>
+          <a routerLink="student/marks">
+            <i class="bi bi-calendar2-minus"></i>Time Table</a>
+        </li>
+
+       
+        <li>
+          <a routerLink="studentchat">
+            <i class="bi bi-chat-text-fill"></i>Chat</a>
+        </li>
+
+        <li>
+          <a routerLink="logout" routerLink="../outer-home">
+            <i class="bi bi-x-lg"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+
+  

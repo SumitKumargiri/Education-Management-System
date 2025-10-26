@@ -1,0 +1,13 @@
+<div class="chat-container">
+  <div class="messages">
+    <div *ngFor="let msg of messages; let i = index" class="message"
+         [ngClass]="{'left': msg.user !== user, 'right': msg.user === user}"
+         (click)="markMessageAsRead(msg)">
+      <strong>{{ msg.user }}:</strong> {{ msg.message }}
+    </div>
+  </div>
+  <div class="message-input">
+    <input [(ngModel)]="message" placeholder="Type a message..." />
+    <button (click)="sendMessage()"><i class="bi bi-send"></i></button>
+  </div>
+</div>

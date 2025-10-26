@@ -1,0 +1,20 @@
+<div class="heading">
+    <h1>ABOUT ME</h1>
+    
+    <div class="head-section">
+        <div class="about-head">
+            <p>A college management system is a sophisticated software platform designed to streamline and automate the myriad administrative tasks and academic processes within educational institutions. It serves as a centralized hub for managing student data, faculty information, course details, financial transactions, communication, and more.
+            At its core, the system revolves around student information management. It includes functionalities for student registration, admission processes, and maintaining comprehensive profiles containing personal information, academic records, attendance records, and fee payment details.For faculty management, the system facilitates the creation and management of faculty profiles, course scheduling, assignment allocation, and attendance tracking.</p> 
+
+            <p *ngIf="showMore">It ensures efficient utilization of faculty resources and facilitates communication between faculty members and administrators. Academic management is another critical aspect, encompassing course creation, modification, and deletion, as well as examination management, grading, and GPA calculation. This module ensures smooth functioning of academic activities and timely assessment of student progress.</p>
+
+
+            <button class="showbutton" *ngIf="!showMore" (click)="showparagraph()">Read More...</button>
+    
+        </div>
+
+        <div class="image">
+            <img src="../../../../assets/about_main.jpg" alt="about-image">
+        </div>
+    </div>
+</div>

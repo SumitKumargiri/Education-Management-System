@@ -1,0 +1,46 @@
+.heading{
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.heading h1{
+    text-align: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 30px;
+    background-color: rgb(15, 15, 167);
+    color: white;
+}
+
+.head-section{
+    display: flex;
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 20px;
+    /* border: 2px solid green; */
+}
+
+
+
+.about-head{
+    /* border: 2px solid blue; */
+    /* margin-top: 100px; */
+    text-align: justify;
+    font-size: 18px;
+    width: 100%;
+    /* display: block; */
+}
+
+.showbutton{
+    background-color: red;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+.image img{
+    width: 95%;
+    margin-left: 20px;
+    border-radius: 20px;
+}

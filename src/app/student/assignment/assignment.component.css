@@ -1,0 +1,77 @@
+
+.assignments-container {
+  margin: 20px;
+  margin-top: 140px;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  color: rgb(31, 31, 222);
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+
+.assignments-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.assignments-table th,
+.assignments-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.assignments-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.assignments-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.assignments-table button {
+  /* background-color: #007bff; */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  /* margin: 4px 2px; */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.assignments-table button fa-icon {
+  margin-right: 8px;
+}
+
+.assignments-table button:hover {
+  background-color: #0056b3;
+}
+
+.assignment-download{
+  background-color: rgb(213, 22, 22);
+}
+
+.assignment-view{
+  margin-left: 10px;
+  background-color:#096fdc;
+}
+
+.no-assignments {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 20px;
+}

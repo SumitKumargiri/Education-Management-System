@@ -1,0 +1,92 @@
+<div class="container">
+  <h2 class="text-center">Course Form</h2>
+  <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="courseName">Course Name</label>
+        <input type="text" id="courseName" formControlName="name" class="form-control" required>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="isActive">Is Active</label>
+        <div class="custom-select-wrapper">
+          <select id="isActive" formControlName="isActive" class="form-control custom-select" required>
+            <option value="0">Inactive</option>
+            <option value="1">Active</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="duration">Duration</label>
+        <div class="custom-select-wrapper">
+          <select id="duration" formControlName="duration" class="form-control custom-select" required>
+            <option value="" disabled selected>Select Duration</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="type">Type</label>
+        <div class="custom-select-wrapper">
+          <select id="type" formControlName="type" class="form-control custom-select" required>
+            <option value="" disabled selected>Select Type</option>
+            <option value="week">Weeks</option>
+            <option value="month">Months</option>
+            <option value="year">Years</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control" rows="3" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="subjectName">Subject Name</label>
+        <div class="custom-select-wrapper">
+          <select id="subjectName" formControlName="subjectname" class="form-control custom-select" required>
+            <option value="" disabled selected>Select Subject</option>
+            <option *ngFor="let subject of subjects" [value]="subject.subjectname">{{ subject.subjectname }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="semester">Semester</label>
+        <div class="custom-select-wrapper">
+          <select id="semester" formControlName="semester" class="form-control custom-select" required>
+            <option value="" disabled selected>Select Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="courseForm.reset()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

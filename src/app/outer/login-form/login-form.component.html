@@ -1,0 +1,90 @@
+
+<div class="login-panel">
+  <!-- Panel Switcher Buttons -->
+  <div class="button-group">
+    <button (click)="showPanel('admin')" [class.active]="currentPanel === 'admin'">Admin Login</button>
+    <button (click)="showPanel('student')" [class.active]="currentPanel === 'student'">Student Login</button>
+    <button (click)="showPanel('teacher')" [class.active]="currentPanel === 'teacher'">Teacher Login</button>
+  </div>
+
+  <!-- Admin Login Form -->
+  <div *ngIf="currentPanel === 'admin'" class="login-form">
+    <h2>Admin Login</h2>
+    <form [formGroup]="adminLoginForm" (ngSubmit)="handleLogin()">
+      <label for="admin-username">Username</label>
+      <input id="admin-username" type="text" formControlName="username">
+      <div *ngIf="adminLoginForm.get('username')?.invalid && adminLoginForm.get('username')?.touched" class="error">
+        Username is required.
+      </div>
+      
+      <label for="admin-password">Password</label>
+      <input id="admin-password" type="password" formControlName="password">
+      <div *ngIf="adminLoginForm.get('password')?.invalid && adminLoginForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+      
+      <div class="capcha_form">
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptchaAdmin" id="capcha"></ngx-recaptcha2>
+      </div>
+      <div *ngIf="adminLoginForm.get('recaptchaAdmin')?.invalid && adminLoginForm.get('recaptchaAdmin')?.touched" class="error">
+        Recaptcha is required.
+      </div>
+      
+      <button type="submit" [disabled]="adminLoginForm.invalid">Login</button>
+    </form>
+  </div>
+
+  <!-- Student Login Form -->
+  <div *ngIf="currentPanel === 'student'" class="login-form">
+    <h2>Student Login</h2>
+    <form [formGroup]="studentLoginForm" (ngSubmit)="studentHandleLogin()">
+      <label for="student-username">Username</label>
+      <input id="student-username" type="text" formControlName="username">
+      <div *ngIf="studentLoginForm.get('username')?.invalid && studentLoginForm.get('username')?.touched" class="error">
+        Username is required.
+      </div>
+      
+      <label for="student-password">Password</label>
+      <input id="student-password" type="password" formControlName="password">
+      <div *ngIf="studentLoginForm.get('password')?.invalid && studentLoginForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+      
+      <div class="capcha_form">
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptchaStudent" id="capcha"></ngx-recaptcha2>
+      </div>
+      <div *ngIf="studentLoginForm.get('recaptchaStudent')?.invalid && studentLoginForm.get('recaptchaStudent')?.touched" class="error">
+        Recaptcha is required.
+      </div>
+      
+      <button type="submit" [disabled]="studentLoginForm.invalid">Login</button>
+    </form>
+  </div>
+
+  <!-- Teacher Login Form -->
+  <div *ngIf="currentPanel === 'teacher'" class="login-form">
+    <h2>Teacher Login</h2>
+    <form [formGroup]="teacherLoginForm" (ngSubmit)="teacherHandleLogin()">
+      <label for="teacher-username">Username</label>
+      <input id="teacher-username" type="text" formControlName="username">
+      <div *ngIf="teacherLoginForm.get('username')?.invalid && teacherLoginForm.get('username')?.touched" class="error">
+        Username is required.
+      </div>
+      
+      <label for="teacher-password">Password</label>
+      <input id="teacher-password" type="password" formControlName="password">
+      <div *ngIf="teacherLoginForm.get('password')?.invalid && teacherLoginForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+      
+      <!-- <div class="capcha_form">
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptchaTeacher" id="capcha"></ngx-recaptcha2>
+      </div>
+      <div *ngIf="teacherLoginForm.get('recaptchaTeacher')?.invalid && teacherLoginForm.get('recaptchaTeacher')?.touched" class="error">
+        Recaptcha is required.
+      </div> -->
+      
+      <button type="submit" [disabled]="teacherLoginForm.invalid">Login</button>
+    </form>
+  </div>
+</div>

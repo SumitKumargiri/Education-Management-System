@@ -1,0 +1,67 @@
+<form (ngSubmit)="onSubmit()" #addForm="ngForm" class="student-form">
+  <h1>Add Student Data</h1>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" id="id" name="id" [(ngModel)]="formData.id" required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="formData.username" required>
+    </div>
+    <div class="form-group">
+      <label for="firstname">Firstname:</label>
+      <input type="text" id="firstname" name="firstname" [(ngModel)]="formData.firstname" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="lastname">Lastname:</label>
+      <input type="text" id="lastname" name="lastname" [(ngModel)]="formData.lastname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+    </div>
+    <div class="form-group">
+      <label for="statename">State Name:</label>
+      <input type="text" id="statename" name="statename" [(ngModel)]="formData.statename" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="statecode">State Code:</label>
+      <input type="text" id="statecode" name="statecode" [(ngModel)]="formData.statecode" required>
+    </div>
+    <div class="form-group">
+      <label for="districtname">District Name:</label>
+      <input type="text" id="districtname" name="districtname" [(ngModel)]="formData.districtname" required>
+    </div>
+    <div class="form-group">
+      <label for="districtcode">District Code:</label>
+      <input type="text" id="districtcode" name="districtcode" [(ngModel)]="formData.districtcode" required>
+    </div>
+   
+    
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="mobile">Mobile No:</label>
+      <input type="text" id="mobile" name="mobile" [(ngModel)]="formData.mobile" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" name="gender" [(ngModel)]="formData.gender" required>
+    </div>
+  </div>
+
+  <div class="form-buttons">
+    <button type="submit" class="submit">Submit</button>
+    <button type="button" routerLink="/admin/student/list" class="cancel">Cancel</button>
+    <button type="button" (click)="clearForm()" class="clear">Clear</button>
+  </div>
+</form>

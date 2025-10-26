@@ -1,0 +1,131 @@
+<div class="container">
+  <div class="button-group">
+    <button (click)="showPanel('admin')" [class.active]="currentPanel === 'admin'">Admin Register</button>
+    <button (click)="showPanel('student')" [class.active]="currentPanel === 'student'">Student Register</button>
+    <button (click)="showPanel('teacher')" [class.active]="currentPanel === 'teacher'">Teacher Register</button>
+  </div>
+
+  <div class="user_signup" [ngClass]="{'active': currentPanel === 'admin'}">
+    <!-- <button class="change-button" (click)="showPanel(null)">Change</button> -->
+    <!-- <div class="container"> -->
+      <form class="form-signin" [formGroup]="registerform" (ngSubmit)="handleRegistration('admin')">
+        <h2 class="form-signin-heading">Create Admin Account</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" class="form-control" placeholder="Enter your First Name here" formControlName="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder="Enter your Last Name here" formControlName="lastname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter your username" formControlName="username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email here" formControlName="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter password here" formControlName="password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Enter confirm password here" formControlName="confirmPassword" required>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <p>Do you have an account? <a class="signin" routerLink="/login-form">Sign In</a></p>
+      </form>
+    </div>
+  <!-- </div> -->
+
+  <div class="user_signup" [ngClass]="{'active': currentPanel === 'student'}">
+    <!-- <button class="change-button" (click)="showPanel(null)">Change</button> -->
+    <!-- <div class="container"> -->
+      <form class="form-signin" [formGroup]="registerform" (ngSubmit)="handleRegistration('student')">
+        <h2 class="form-signin-heading">Create Student Account</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" class="form-control" placeholder="Enter your First Name here" formControlName="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder="Enter your Last Name here" formControlName="lastname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter your username" formControlName="username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email here" formControlName="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter password here" formControlName="password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Enter confirm password here" formControlName="confirmPassword" required>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <p>Do you have an account? <a class="signin" routerLink="/studentlogin">Sign In</a></p>
+      </form>
+    </div>
+  <!-- </div> -->
+
+  <!-- Teacher Registration Form -->
+  <div class="user_signup" [ngClass]="{'active': currentPanel === 'teacher'}">
+    <!-- <button class="change-button" (click)="showPanel(null)">Change</button> -->
+    <!-- <div class="container"> -->
+      <form class="form-signin" [formGroup]="registerform" (ngSubmit)="handleRegistration('teacher')">
+        <h2 class="form-signin-heading">Create Teacher Account</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" class="form-control" placeholder="Enter your First Name here" formControlName="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder="Enter your Last Name here" formControlName="lastname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter your username" formControlName="username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email here" formControlName="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter password here" formControlName="password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Enter confirm password here" formControlName="confirmPassword" required>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <p>Do you have an account? <a class="signin" routerLink="/login-form">Sign In</a></p>
+      </form>
+    </div>
+  </div>
+<!-- </div> -->

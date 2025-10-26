@@ -1,0 +1,29 @@
+<header>
+  <div class="logo">
+    <img src="../../../../assets/web-logo.png" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/outer-contact">Contact</a></li>
+    </ul>
+    <button class="btn" (click)="toggleLoginPanel()">Login</button>
+    <button class="btn1" (click)="toggleRegisterPanel()">Register</button>
+  </nav>
+</header>
+
+<!-- Overlay and Login Popup -->
+<div class="overlay" *ngIf="showLoginPanel" (click)="toggleLoginPanel()"></div>
+<div class="login-popup" *ngIf="showLoginPanel">
+  <app-login-form (close)="toggleLoginPanel()"></app-login-form>
+</div>
+
+
+<div class="overlay" *ngIf="showRegisterPanel" (click)="toggleRegisterPanel()"></div>
+<div class="register-popup" *ngIf="showRegisterPanel">
+  <app-singup-form (close)="toggleRegisterPanel()"></app-singup-form>
+</div>
+
+<!-- Add the router outlet for other routes -->
+<router-outlet></router-outlet>

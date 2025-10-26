@@ -1,0 +1,187 @@
+
+.container-heading{
+    margin-top: 140px;
+    margin-bottom: 40px;
+  }
+  .container-heading h1{
+    font-size: 32px;
+    font-weight: bolder;
+    color: blue;
+    text-align: center;
+  }
+  
+  /* ++++++ add & search ++++++ */
+  
+  .add_search{
+    display: flex;
+    width: 90%;
+    margin-left: 40px;
+  }
+  
+  .Std_add button{
+    background-color:rgb(132, 38, 38);
+    width: 50px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+  } 
+  
+  .search{
+    margin-left: 600px;
+    display: flex;
+  }
+  
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container input{
+    padding-right: 30px;
+  }
+  
+  .input-container i{
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    color: gray;
+  }
+  
+  .search button{
+    margin-left: 8px;
+    padding: 5px;
+    background-color: gray;
+    border-radius: 5px;
+    width: 80px;
+    border: none;
+    color: white;
+  }
+  
+  /* ++++++++++++++++++++++++ */
+  
+  .table-container {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-left: 10px; */
+    margin-top: 50px;
+  }
+  
+  .table-heading {
+    display: table-row;
+    background-color: #f2f2f2;
+    font-weight: 16px; 
+  }
+  
+  .table-row {
+    display: table-row;
+    margin-top: 100px;
+  }
+  
+  .table-cell,
+  .table-cell-heading {
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid #ddd; 
+  }
+  
+  .table-cell-heading {
+    font-weight: bold;
+  }
+  
+  .table-cell:first-child {
+    border-left: none; 
+  }
+  
+  .table-cell:last-child {
+    border-right: none; 
+  }
+  
+  .table-cell-button{
+    align-items: center;
+    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .table-cell-button .btn1{
+    color: blue;
+    margin-left: 5px;
+    background: none;
+    border: none;
+  }
+  
+  .table-cell-button .btn2{
+    color: red;
+    margin-left: 5px;
+    background: none;
+    border: none;
+  }
+  
+  /* +++++++++++ loading concept +++++++++++++ */
+  
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+  }
+  
+  .spinner-border {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  /* +++++++++++++++++ pagination ++++++++++++++++++++ */
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 2px rgb(206, 199, 199);
+    border: none;
+    border-color: white;
+    margin-left: 0px;
+    margin-right: 40px;
+  }
+  
+  .pagination_button{
+    margin-left: 800px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .pagination span {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    font-size: 18px;
+  }
+  
+  .pagination span.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

@@ -1,0 +1,24 @@
+<div class="admin_header">
+    <div class="admin_heading">
+        <h1>Teacher Dashboard</h1>
+    </div>
+
+    <div class="admin_profile" *ngIf="username">
+        <h1>{{ username }}</h1>
+
+        <label for="profileImageUpload" class="profile-image">
+            <img [src]="profileImage" alt="profile image">
+            <i class="bi bi-pencil-fill" id="profile_icon_upload" *ngIf="!isPanelOpen"></i>
+        </label>
+
+        <input type="file" id="profileImageUpload" accept="image/png, image/jpeg, image/jpg" (change)="onProfileImageSelected($event)" style="display: none;">
+        
+        <i class="bi bi-chevron-down" (click)="togglePanel()"></i>
+
+        <div *ngIf="isPanelOpen" class="panel">
+            <div class="panel-option" (click)="onUploadImage(); togglePanel()" routerLink="adminprofileupdate">ProfileEdit</div>
+            <div class="panel-option" (click)="togglePanel()" routerLink="/admin/adminresetpass">Reset Password</div>
+            <div class="panel-option" (click)="onLogout(); togglePanel()" routerLink="">Logout</div>
+        </div>
+    </div>
+</div>

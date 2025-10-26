@@ -1,0 +1,126 @@
+
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 24px 8px 12px; 
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.custom-select option {
+  padding: 8px;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+.custom-select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #555; 
+  pointer-events: none;
+}
+
+
+
+
+.container {
+  width: 100%;
+  margin-top: 120px;
+  padding: 20px;
+  /* background-color: #f8f9fa; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form-group label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #343a40;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.text-danger {
+  font-size: 14px;
+  color: #dc3545;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  margin-top: 30px;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}

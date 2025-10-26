@@ -1,0 +1,36 @@
+<div class="course_add">
+  <button class="btn_add" routerLink="/admin/course/addcourses">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+</div>
+
+<div class="course-table-container">
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Duration</th>
+        <th>Type</th>
+        <th>Created By</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <td>{{ course.id }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.duration }}</td>
+        <td>{{ course.type }}</td>
+        <td>{{ course.createby }}</td>
+        <td>{{ course.description }}</td>
+        <td>
+          <button class="btn1" (click)="editCourse(course)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,53 @@
+
+.course_add{
+    margin-top: 140px;
+}
+.btn_add{
+  background-color:rgb(47, 108, 47);
+  color: white;
+  width: 50px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bolder;
+}
+
+
+.course-table-container {
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .course-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+  }
+  
+  .course-table th,
+  .course-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .course-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .update{
+    border: none;
+  }
+  .update td{
+    border: none;
+  }
+  .btn1 {
+    border: none;
+    background-color: none;
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .btn1 i {
+    font-size: 22px;
+  }
+  

@@ -1,0 +1,211 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+h1, h3 {
+  margin-bottom: 20px;
+  color: #495057;
+}
+
+p {
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.teachersummary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.teachertotalattendance, .studenttotalattendance {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 10px;
+  width: 45%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.teachertotalattendance h3, .studenttotalattendance h3 {
+  color: #007bff;
+}
+
+
+.nav-link{
+  cursor: pointer;
+}
+
+
+/* Calendar Navigation */
+
+
+#calendar-view h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+/* Calendar Views */
+.cal-day-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.cal-day-cell:hover {
+  background-color: #e2e6ea;
+  cursor: pointer;
+}
+
+.cal-day-cell span {
+  font-size: 14px;
+}
+
+.cal-day-cell i {
+  color: #007bff;
+}
+
+/* Modals */
+.modal-dialog{
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.modal-content {
+  width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.modal-header h1, .modal-header h4 {
+  margin: 0;
+}
+
+.modal-header .close {
+  color: #fff;
+  opacity: 1;
+}
+
+.modal-body {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+/* Tables */
+.table-container {
+  width: 100%;
+}
+
+.table-container .date{
+  margin-left: 550px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.table-heading {
+  display: flex;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px 0;
+}
+
+.table-cell-heading {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px 0;
+}
+
+.table-cell {
+  flex: 1;
+  text-align: center;
+}
+
+.attendance-table-select {
+  display: flex;
+  align-items: center;
+}
+
+.attendance-select {
+  margin-right: 10px;
+}
+
+.btn-attendance {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.btn-attendance:hover {
+  background-color: #0056b3;
+}
+
+/* Button Styling */
+.btnaddteacher {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.btnaddteacher:hover {
+  background-color: #0056b3;
+}
+
+.btnaddteacher i {
+  font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teachertotalattendance, .studenttotalattendance {
+    width: 100%;
+  }
+  
+  #calendar-view .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content {
+    margin: 10px;
+  }
+}

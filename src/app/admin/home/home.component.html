@@ -1,0 +1,58 @@
+<div class="header_img">
+  <div class="headstudent_image">
+    <div class="text_containerstudent">
+      <h1>Student</h1>
+      <h2>{{totalStudents}}</h2>
+    </div>
+    <img src="../../../assets/graduation_student_img.png" alt="Student Image">
+  </div>
+  <div class="headstudent_image">
+    <div class="text_containerteacher">
+      <h1>Teacher</h1>
+      <h2>{{totalTeachers}}</h2>
+    </div>
+    <img src="../../../assets/teacherimage.png" alt="Teacher Image">
+  </div>
+  <div class="headstudent_image">
+    <div class="text_containeranother">
+      <h1>Another Category</h1>
+      <!-- <h2>{{number_student}}</h2> -->
+    </div>
+    <img src="../../../assets/graduation_student_img.png" alt="Another Category Image">
+  </div>
+</div>
+
+
+
+
+
+<div class="grap_section">
+  <div class="graph_count">
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div *ngIf="!errorMessage" class="graph_count1">
+      <div class="graph_left">
+        <div class="linechart">
+          <canvas #lineChartCanvas></canvas>
+        </div>
+
+        <div class="historicalchart">
+          <canvas #historicalChartCanvas></canvas>
+        </div>
+      </div>
+
+      <div class="graph_right">
+        <div class="piecount_head">
+          <div class="head_image">
+            <img src="../../../assets/admin_home_img.png" alt="image">
+          </div>
+          <div class="piechart">
+            <canvas #pieChartCanvas></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

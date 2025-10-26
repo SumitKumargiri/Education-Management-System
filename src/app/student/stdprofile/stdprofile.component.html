@@ -1,0 +1,71 @@
+<div class="profile-edit-container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form-grid">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input id="username" type="text" formControlName="username" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input id="firstname" type="text" formControlName="firstname">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input id="lastname" type="text" formControlName="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="districtname">District Name:</label>
+      <input id="districtname" type="text" formControlName="districtname">
+    </div>
+
+    <div class="form-group">
+      <label for="districtcode">District Code:</label>
+      <input id="districtcode" type="text" formControlName="districtcode">
+    </div>
+    
+    <div class="form-group">
+      <label for="statename">State Name:</label>
+      <input id="statename" type="text" formControlName="statename">
+    </div>
+
+    <div class="form-group">
+      <label for="statecode">State Code:</label>
+      <input id="statecode" type="text" formControlName="statecode">
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input id="mobile" type="text" formControlName="mobile">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" formControlName="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <input id="status" type="text" formControlName="status">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Profile Image:</label>
+      <input id="image" type="file" (change)="onFileSelected($event)">
+      <div *ngIf="fileError" class="error">{{ fileError }}</div>
+    </div>
+
+    <button type="submit" [disabled]="!profileForm.valid">Save</button>
+    <button class="btn_cancel" routerLink="/student/studenthome">Cancel</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="admin_signup">
+    <img src="../../../../assets/admin_signup.png" alt="singup_image">
+  <div class="container">
+      <form class="form-signin" [formGroup]="registerform" (ngSubmit)="handleRegistration()">
+        <h2 class="form-signin-heading">Create Account</h2>
+        <label for="inputFirstname">First Name</label>
+        <input type="firstname" id="firstname" class="form-control" placeholder="Enter your First Name here" formControlName="firstname" required>
+        <br>
+        <label for="inputLastname">Last Name</label>
+        <input type="lastname" id="inputLastname" class="form-control" placeholder="Enter your Last Name here" formControlName="lastname" required>
+        <br>
+        <label for="inputName">username</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Enter your username" formControlName="username" required autofocus>
+        <br>
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Enter your email here" formControlName="email" required>
+        <br>
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Enter password here" formControlName="password" required>
+        <br>
+        <label for="inputCPassword">Confirm Password</label>
+        <input type="password" id="inputCPassword" class="form-control" placeholder="Enter confirm password here" formControlName="confirmPassword" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  
+        <p>Do you have an account? <span class="signin" routerLink="/login-form">Sign In</span></p>
+      </form>
+    </div>
+  </div>

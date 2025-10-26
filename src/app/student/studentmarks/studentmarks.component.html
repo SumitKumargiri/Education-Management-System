@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div *ngIf="isLoading" class="text-center">
+        <p>Loading...</p>
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error }}
+      </div>
+
+      <div *ngIf="!isLoading && !error" class="table-heading">
+      <h2>Student Marks</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Subject Name</th>
+              <th>Marks</th>
+              <th>Assignment1 Marks</th>
+              <th>Assignment2 Marks</th>
+              <th>Assignment3 Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mark of studentMarks">
+              <td>{{ mark.subjectname }}</td>
+              <td>{{ mark.marks }}</td>
+              <td>{{ mark.a1marks }}</td>
+              <td>{{ mark.a2marks }}</td>
+              <td>{{ mark.a3marks }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

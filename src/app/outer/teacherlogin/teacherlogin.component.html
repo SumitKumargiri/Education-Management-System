@@ -1,0 +1,26 @@
+
+<div class="login-container">
+  <div class="login-form-container">
+    <div class="login_form">
+      <!-- <form [formGroup]="loginForm" (ngSubmit)="handleLogin()"> -->
+        <h1><span class="login_head">LOGIN</span><span class="login_head1">HERE</span></h1>
+
+        <input type="text" placeholder="Username" formControlName="username" required>
+        <input type="password" placeholder="Password" formControlName="password" required><br/>
+
+        <div class="capcha_form">
+          <!-- <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2> -->
+        </div>
+
+        <button type="submit">Login</button>
+        <p>Not a member? <span><a routerLink="/teacherregister">Sign up now</a></span></p>
+      <!-- </form> -->
+    </div>
+  </div>
+  <!-- <div class="login-image-container">
+    <div class="login_head">
+      <img src="../../../assets/login_head.PNG" alt="login-image">
+    </div>
+  </div> -->
+</div>
+

@@ -1,0 +1,58 @@
+
+<nav class="sidebar">
+    <div class="logo">
+        <a [routerLink]="'../home'">
+            <img src="../../../../assets/web-logo.png" alt="logo">
+        </a>
+    </div>
+    
+    <div class="navigation">
+      <ul class="list-unstyled">
+        <li>
+          <a routerLink="teacherhome">
+            <i class="bi bi-house-door"></i>Home</a>
+        </li>
+
+        <li>
+          <a routerLink="student/list">
+            <i class="bi bi-mortarboard-fill"></i>Student</a>
+        </li>
+
+        <li>
+          <a routerLink="teachersubjectassignment">
+            <i class="bi bi-file-text-fill"></i>Assignment</a>
+        </li>
+        
+        <li>
+          <a routerLink="teacher/list">
+            <i class="bi bi-file-ruled"></i>Time Table</a>
+        </li>
+
+        <li>
+          <a routerLink="studentattendance">
+            <i class="bi bi-person-fill-check"></i>Attendance</a>
+        </li>
+
+        <li>
+          <a routerLink="addstudentsmarks">
+            <i class="bi bi-file-earmark-medical-fill"></i>Marks</a>
+        </li>
+
+        <li>
+          <a routerLink="teacherchat">
+            <i class="bi bi-wechat"></i>Chat</a>
+        </li>
+
+        <li>
+          <a routerLink="logout" routerLink="../outer-home">
+            <i class="bi bi-x-lg"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+
+  

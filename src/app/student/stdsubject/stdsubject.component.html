@@ -1,0 +1,30 @@
+
+<div *ngIf="subjects.length > 0" class="subjects-container">
+    <h2>Subject Name</h2>
+
+    <div class="department-container">
+        <div *ngFor="let subject of uniqueSubjects" class="department">
+          <h1>{{ subject.departmentname }} (semester-{{ subject.semester }})</h1>
+        </div>
+      </div>
+
+    <table class="subjects-table">
+      <thead>
+        <tr>
+          <th>Teacher Name</th>
+          <th>Subject Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of subjects">
+          <td>{{ subject.firstname }} {{ subject.lastname }}</td>
+          <td>{{ subject.subjectname }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="subjects.length === 0" class="no-assignments">
+    <p>No subjects found.</p>
+  </div>
+  

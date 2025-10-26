@@ -1,0 +1,74 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.department-filter {
+  width: calc(100% - 30px); 
+  padding-right: 30px; 
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #555; 
+}
+
+.search-input {
+  width: 40%; 
+  margin-left: 10px; 
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.student-table th,
+.student-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.student-table th {
+  background-color: #f0f0f0;
+}
+
+.student-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.mark-input {
+  width: 150px;
+}
+
+.submit-button {
+  padding: 8px 16px;
+}

@@ -1,0 +1,31 @@
+footer {
+    color: white; 
+    display: flex;
+    width: 87%; 
+    height: 20vh;
+    margin-left: 200px;
+    margin-top: 20px;
+    box-shadow: 8px 0px 2px 2px rgb(194, 181, 181);
+
+}
+
+/* .footer_image{
+    margin-left: 10px;
+} */
+
+footer img{
+    height: 100px;
+    margin: 20px 0px 0px 60px;
+}
+
+.footer_std{
+    margin-left: 290px;
+}
+
+.footer_std img{
+    width: 90%;
+    height: 17vh;
+}
+
+
+  

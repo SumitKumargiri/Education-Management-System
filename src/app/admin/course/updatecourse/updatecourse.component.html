@@ -1,0 +1,36 @@
+<form [formGroup]="editForm" (ngSubmit)="updateCourse()" class="course-form">
+    <input formControlName="id" type="hidden">
+    <h1>Update Courses</h1>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input id="id" formControlName="id" type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Course Name:</label>
+            <input id="name" formControlName="name" type="text">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="duration">Duration:</label>
+            <input id="duration" formControlName="duration" type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input id="type" formControlName="type" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Update Course</button>
+    <button class="btn-cancle" routerLink="/admin/course/listcourse">Cancle</button>
+</form>

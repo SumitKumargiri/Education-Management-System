@@ -1,0 +1,31 @@
+<div>
+  <h2>Reset Password</h2>
+  <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Old Password:</label>
+      <input type="password" formControlName="oldPassword" required />
+      <div *ngIf="resetForm.get('oldPassword')?.invalid && resetForm.get('oldPassword')?.touched">
+        Old Password is required.
+      </div>
+    </div>
+    <div>
+      <label>New Password:</label>
+      <input type="password" formControlName="password" required minlength="4" />
+      <div *ngIf="resetForm.get('password')?.invalid && resetForm.get('password')?.touched">
+        <div *ngIf="resetForm.get('password')?.errors?.['required']">New Password is required.</div>
+        <div *ngIf="resetForm.get('password')?.errors?.['minlength']">New Password must be at least 4 characters long.</div>
+      </div>
+    </div>
+    <div>
+      <label>Confirm Password:</label>
+      <input type="password" formControlName="confirmPassword" required />
+      <div *ngIf="resetForm.get('confirmPassword')?.invalid && resetForm.get('confirmPassword')?.touched">
+        Confirm Password is required.
+      </div>
+      <div *ngIf="resetForm.errors?.['notSame'] && resetForm.get('confirmPassword')?.touched">
+        Passwords do not match.
+      </div>
+    </div>
+    <button type="submit" [disabled]="resetForm.invalid">Reset Password</button>
+  </form>
+</div>
