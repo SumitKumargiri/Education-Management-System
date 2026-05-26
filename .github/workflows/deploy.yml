@@ -27,11 +27,15 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build Angular App
+      - name: Build Angular Application
         run: npm run build:github
 
-      - name: Show Dist Folder
-        run: ls -la dist/education-pro/browser
+      - name: Verify Build Files
+        run: |
+          ls
+          ls dist
+          ls dist/education-pro
+          ls dist/education-pro/browser
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
