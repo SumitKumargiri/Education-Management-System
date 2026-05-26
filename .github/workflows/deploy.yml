@@ -1,15 +1,17 @@
 name: Deploy Angular to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Angular CI Pipeline"]
+    types:
+      - completed
 
 permissions:
   contents: write
 
 jobs:
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
