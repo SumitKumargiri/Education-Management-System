@@ -45,6 +45,7 @@ import { AddstudentsmarksComponent } from './teacher/addstudentsmarks/addstudent
 
 
 const routes: Routes = [
+  
 // +++++++++++ Admin page +++++++++++++
   { 
     path: 'admin',
