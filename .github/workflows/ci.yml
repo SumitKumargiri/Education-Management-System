@@ -1,0 +1,35 @@
+name: Angular CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Verify Angular CLI
+        run: npx ng version
+
+      - name: Build Application
+        run: npm run build:github
+
+      - name: Run Unit Tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
