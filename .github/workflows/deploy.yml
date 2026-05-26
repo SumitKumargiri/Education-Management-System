@@ -6,7 +6,6 @@ on:
       - Angular CI Pipeline
     types:
       - completed
-
   workflow_dispatch:
 
 permissions:
